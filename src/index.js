@@ -1,15 +1,21 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+import firebase from 'firebase/app';
+import 'firebase/auth';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './styles/index.scss';
+import { BrowserRouter as Router } from 'react-router-dom';
 import App from './App';
+import firebaseConfig from './helpers/firebaseHelper';
 import reportWebVitals from './reportWebVitals';
+import './styles/index.scss';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
 
 ReactDOM.render(
-  <React.Fragment>
+  <Router>
     <App />
-  </React.Fragment>,
+  </Router>,
   document.getElementById('root')
 );
 
