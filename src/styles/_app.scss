@@ -1,0 +1,12 @@
+.app-container {
+  max-width: 600px;
+  min-width: 300px;
+  margin: 0 auto;
+  padding-top: 75px;
+  padding-bottom: 0px;
+
+  @media only screen and (max-width: 600px) {
+    padding-top: 50px;
+    padding-bottom: 75px;
+  }
+}

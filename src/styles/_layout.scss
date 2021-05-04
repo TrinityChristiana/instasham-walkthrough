@@ -1,0 +1,18 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: $primary-background-color;
+
+  a,
+  .as-link {
+    color: $black;
+    cursor: pointer;
+  }
+
+  .as-link:hover,
+  a:hover {
+    color: $accent-color;
+    text-decoration: none !important;
+  }
+
+
+}

@@ -1,0 +1,107 @@
+.details-card {
+  max-width: 600px;
+  min-width: 300px;
+  margin: auto;
+
+  &-withborder {
+    background-color: $white;
+    margin: 20px 0;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px $accent-color;
+  }
+  @media only screen and (max-width: 600px) {
+    &-withborder {
+      margin: 0;
+      border-radius: 0;
+      box-shadow: none;
+    }
+  }
+
+  &-user {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 20px;
+
+    &-info {
+      display: flex;
+      align-content: center;
+      height: 70px;
+      cursor: pointer;
+
+      &-avatar-container {
+        width: 70px;
+        padding: 10px;
+      }
+
+      &-avatar-container:after {
+        content: '';
+        display: block;
+        padding-bottom: 100%;
+      }
+
+      &-avatar {
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        border-radius: 50%;
+        border: $accent-color solid 1px;
+      }
+
+      &-username {
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    &-actions {
+      display: flex;
+      align-items: center;
+      &-icon {
+        cursor: pointer;
+      }
+    }
+  }
+
+  &-post {
+    &-photo {
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 100%;
+      background-position: center;
+    }
+
+    &-photo:after {
+      content: '';
+      display: block;
+      padding-bottom: 100%;
+    }
+
+    &-info {
+      display: flex;
+      justify-content: space-between;
+      padding: 5px 5px 10px 10px;
+
+      &-heart {
+        &-icon {
+          width: 40px;
+          height: 40px;
+          cursor: pointer;
+        }
+        .hearted {
+          fill: $accent-color;
+        }
+      }
+    }
+
+    &-text {
+      padding: 5px 15px 15px 15px;
+      &-username {
+        font-weight: 700;
+        padding-right: 5px;
+        cursor: pointer;
+      }
+    }
+  }
+}

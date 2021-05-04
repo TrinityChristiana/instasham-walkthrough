@@ -1,0 +1,18 @@
+.post-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  &-square {
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 33%;
+    background-position: center;
+  }
+
+  &-square:after {
+    content: '';
+    display: block;
+    padding-bottom: 100%;
+  }
+}

@@ -1,0 +1,97 @@
+.app-navbar {
+  background-color: $primary-background-color;
+  min-height: 50px;
+  border-bottom: 1px solid $accent-background-color;
+
+  &-items {
+    background-color: $primary-background-color;
+    width: 375px;
+    height: 75px;
+    display: flex;
+
+    &-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 75px;
+
+      &-logo {
+        color: $black;
+        width: 40px;
+        height: 40px;
+      }
+
+      &-logo-lg {
+        color: $black;
+        width: 50px;
+        height: 50px;
+      }
+
+      .active-nav-item {
+        color: $primary-color;
+      }
+
+    }
+  }
+
+  &-lg {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .app-navbar-logo {
+      width: 200px;
+      height: 35px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      margin: 20px;
+    }
+  }
+
+  &-sm {
+    display: none;
+    justify-content: center;
+  }
+
+  &-back {
+    display: none;
+  }
+
+  @media only screen and (max-width: 600px) {
+    &-back {
+      display: flex;
+      position: fixed;
+      height: 50px;
+      width: 50px;
+      top: 0px;
+      left: 0;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &-sm {
+      display: flex;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    &-lg {
+      .app-navbar-items {
+        display: none;
+      }
+
+      justify-content: center;
+
+      .app-navbar-logo {
+        width: 180px;
+        height: 30px;
+        margin: 0px;
+      }
+    }
+  }
+}
