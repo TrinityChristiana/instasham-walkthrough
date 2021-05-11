@@ -77,5 +77,10 @@
       border-color: $accent-color !important;
       color: $black !important;
     }
+    button:disabled {
+      background-color: grey !important;
+      border-color: grey !important;
+      color: $black !important;
+    }
   }
 }
