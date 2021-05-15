@@ -1,19 +1,22 @@
 import React from 'react';
-import ProfileInfo from '../components/ProfileInfo';
-import AppNavbar from '../components/Navbar';
-import PostDetailsCard from '../components/PostDetailsCard';
+import {
+  ProfileInfo,
+  AppNavbar,
+  PostDetailsCard,
+  PostGrid,
+  UsersList
+} from '../components/instasham-design-system';
 import './App.scss';
 import POSTJSON from '../sample_json/posts.json';
 import USERJSON from '../sample_json/users.json';
-import UserList from '../components/UsersList';
-import PostGrid from '../components/PostGrid';
 
 function App() {
   return (
     <>
+      <AppNavbar userInfo={{ username: 'asd' }} />
       <div className='app-container'>
         <h2>UserList</h2>
-        <UserList userList={Object.values(USERJSON)} />
+        <UsersList userList={Object.values(USERJSON)} />
         <h2>ProfileInfo</h2>
         <ProfileInfo postsCount={10} followerCount={10} followingCount={10} fullName='test' bio='asdasdasdasd' isUser={false} />
         <h2>PostDetailsCard</h2>
@@ -21,7 +24,6 @@ function App() {
         <h2>PostGrid</h2>
         <PostGrid posts={Object.values(POSTJSON)} />
       </div>
-      <AppNavbar userInfo={{ username: 'asd' }} />
     </>
   );
 }

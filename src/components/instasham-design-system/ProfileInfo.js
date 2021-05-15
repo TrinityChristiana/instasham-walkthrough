@@ -9,8 +9,8 @@ import {
   getFollowingByUid,
   getIsFollowing,
   unfollowUser
-} from '../helpers/relationshipHelper';
-import { getCurrentUsersUid } from '../helpers/userHelper';
+} from '../../helpers/relationshipHelper';
+import { getCurrentUsersUid } from '../../helpers/userHelper';
 import UserList from './UsersList';
 
 const ProfileInfo = ({

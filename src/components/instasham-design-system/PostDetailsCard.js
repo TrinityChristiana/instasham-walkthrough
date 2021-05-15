@@ -4,9 +4,9 @@ import React, { useEffect, useState } from 'react';
 import { Heart, MoreHorizontal } from 'react-feather';
 import { useHistory, useLocation } from 'react-router-dom';
 import { ListGroup, ListGroupItem, UncontrolledPopover } from 'reactstrap';
-import { heartPost, unheartPost, userLikesPost } from '../helpers/heartHelper';
-import { deletePost } from '../helpers/postHelper';
-import { getCurrentUsersUid, getUserByUid } from '../helpers/userHelper';
+import { heartPost, unheartPost, userLikesPost } from '../../helpers/heartHelper';
+import { deletePost } from '../../helpers/postHelper';
+import { getCurrentUsersUid, getUserByUid } from '../../helpers/userHelper';
 
 const PostDetailCard = ({
   postInfo,
