@@ -3,9 +3,9 @@ You were hired on a team to work on a social media application called Instasham.
 
 This repo already has some components for you to use to complete this project. When you first start this app, they are all loaded on the DOM for you to play around with and to see an example of it implemented. DO NOT update the components in the `instasham-design-system` directory. You must use them as is. You can update the styles for these components to better fit your companies theme.
 
-Because a backend with endpoints has not been created yet, there are also incomplete helper functions that these components need to function properly. Your team’s job is to create a Firebase backend using the provided ERD and complete the helper functions. Don't worry, each incomplete function can be found by searching for the TODO keyword and there are notes provided for assistance.
+Because a backend with endpoints has not been created yet, there are also incomplete helper functions that these components need to function properly. Part of your team’s job is to create a Firebase backend using the provided ERD and complete the helper functions. Don't worry, each incomplete function can be found by searching for the TODO keyword and there are notes provided for assistance.
 
-A list of what the Product team wants this application to do is listed below. Within that list are the exact routes needed, what components are needed in each view, and even some stretch goals. Your team’s job is to create tickets from this list of features and stick to the list. Though if you have any questions, I'm sure the product team is open to feedback, but they want this product to look as close to this example here: https://trinstasham.netlify.app/
+A list of what the Product team wants this application to do is listed below. Within that list are the exact routes needed, what components are needed in each view, and even some stretch goals. Your team’s job is to create tickets from this list of features and stick to the list. Though if you have any questions, I'm sure the Product team is open to feedback, but they want this product to look as close to this example here: https://trinstasham.netlify.app/
 
 ## Setup Instructions
 1. Install Dependencies `npm i`
@@ -15,13 +15,13 @@ A list of what the Product team wants this application to do is listed below. Wi
 - General
   - Each user should have a user object in firebase.
   - When getting the current date use the `getCurrentDate` function in `/helpers/dateHelper.js`.
-  - Get username from characters before @ in user's email address. Ex: if email is "trinity@me.com", username would be "trinity".
+  - Get username from characters before @ in user's email address. Ex: if the email is "trinity@me.com", the username would be "trinity".
   - Don't use the Firebase key from the user node when referencing a user, always use the uid from the auth user.
-  - Do not update the components file. You may update the styles, but do not update the React code it's self.
+  - Do not update the components file. You may update the styles, but do not update the React code itself.
 - Login Page
   - At route path: `/login`
-  - Shows up if user's not logged in
-  - User can login to app using google auth
+  - Shows up if the user's not logged in
+  - User can log in to the app using Google auth
 - Feed Page
   - At route path: `/`
   - Components Used:
@@ -41,7 +41,7 @@ A list of what the Product team wants this application to do is listed below. Wi
 - Edit Post
   - At route path: `/edit/{{ postId }}`
   - Has a prepopulated form to update a post. (Look at ERD for data structure)
-  - Stretch: If postId in url is to a post that does not belong to the current user or does not exist, redirect them to the home page.
+  - Stretch: If `postId` in url is to a post that does not belong to the current user or does not exist, redirect them to the home page.
 - Heart Page `/hearts`
   - At route path: `/hearts`
   - Components Used:
@@ -50,15 +50,15 @@ A list of what the Product team wants this application to do is listed below. Wi
 - Profile View
   - At route path: `/sham/{{ username }}`
   - Components Used:
-    - Use `PostGrid` component to show preview of all the user's posts
-    - Use `ProfileInfo` component to show user information
-  - View how many posts user has
-  - View how many followers user has
-  - View how many people user follows
+    - Use the `PostGrid` component to show a preview of all the user's posts
+    - Use the `ProfileInfo` component to show user information
+  - View how many posts a user has
+  - View how many followers a user has
+  - View how many people a user follows
   - View user's image, bio, and full name
   - View preview of all post user has
-  - If not current user, allow user to follow or unfollow a user
-  - If current user have a button that allows them to go to a settings page.
+  - If not looking at the current user, allow the user to follow or unfollow a user
+  - If looking at the current user, have a button that allows them to go to a settings page.
 - Post Details Page
   - At route path: `/posts/{{ postId }}`
   - Components Used:
@@ -67,7 +67,6 @@ A list of what the Product team wants this application to do is listed below. Wi
 - Settings page
   - Allow user to update their bio
   - Allow user to logout
-
 - Navbar
   - Here is how to iplment the Navbar
   ```jsx
@@ -80,3 +79,6 @@ A list of what the Product team wants this application to do is listed below. Wi
 ## ERD
 
 <a href="https://dbdiagram.io/d/6099dd88b29a09603d1444c2">![ERD Preview](./documentation/ERD.png)</a>
+
+
+
