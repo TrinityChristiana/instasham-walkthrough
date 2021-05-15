@@ -1,6 +1,5 @@
 # Rules
 
-
 # Feature List
 - General
   - Each user should have a user object in FB.
@@ -49,9 +48,15 @@
   - View preview of all post user has
   - If not current user, allow user to follow or unfollow a user
   - If current user have a button that allows them to go to a settings page.
+- Post Details Page
+  - At route path: `/posts/{{ postId }}`
+  - Components Used:
+    - Use `PostDetailCard` component to show a single post
+  - Shows a post based on the id in the url
 - Settings page
   - Allow user to update their bio
   - Allow user to logout
 
 ## ERD
-<iframe width="560" height="315" src='https://dbdiagram.io/embed/6099dd88b29a09603d1444c2'> </iframe>
+
+<a href="https://dbdiagram.io/d/6099dd88b29a09603d1444c2">![ERD Preview](./documentation/ERD.png)</a>
