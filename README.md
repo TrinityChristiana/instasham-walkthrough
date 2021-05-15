@@ -16,7 +16,7 @@ A list of what the Product team wants this application to do is listed below. Wi
 - General
   - Each user should have a user object in firebase.
   - When getting the current date use the `getCurrentDate` function in `/helpers/dateHelper.js`.
-  - Get username from characters before @ in user's email address. Ex: if email is trinity@me.com, username would be trinity.
+  - Get username from characters before @ in user's email address. Ex: if email is "trinity@me.com", username would be "trinity".
   - Don't use the Firebase key from the user node when referencing a user, always use the uid from the auth user.
   - Do not update the components file. You may update the styles, but do not update the React code it's self.
 - Login Page
