@@ -1,11 +1,12 @@
 # Instasham
 You were hired on a team to work on a social media application called Instasham. The designers have already created their mocks ups for the components and the Component Library has already been made. It's your team's job to use the Component library to build out the whole application with functionality.
 
-This repo already has some componets for you to use to complete this project. When you first start this app, they are all loaded on the DOM for you to play around with and to see an example of it implmented. DO NOT update the components in the `instasham-design-system` directory. You must use them as is. You can update the styles for these componets though to better fit your companies theme.
+This repo already has some components for you to use to complete this project. When you first start this app, they are all loaded on the DOM for you to play around with and to see an example of it implemented. DO NOT update the components in the `instasham-design-system` directory. You must use them as is. You can update the styles for these components to better fit your companies theme.
 
-Because a backend with endpoints has not been created yet, there are also incomplete helper functions that these components need to function properly. It is your team's job to create a Firebase backend using the provided ERD and to complete the helper functions. Don't worry, each incomplete function can be found by doing a search for the TODO keyword and there are notes provided for assistance.
+Because a backend with endpoints has not been created yet, there are also incomplete helper functions that these components need to function properly. Your team’s job is to create a Firebase backend using the provided ERD and complete the helper functions. Don't worry, each incomplete function can be found by searching for the TODO keyword and there are notes provided for assistance.
 
-A list of what the Product team wants this application to do is listed below. Within that list are the exact routes needed, what componets are needed in each view, and even some stretch goals. It's your team's job to create tickets from this list of features and to stick to the list. Though if you have any questions, I'm sure product is open to feedback, but they really want this product to look as closely to this example here: https://trinstasham.netlify.app/
+A list of what the Product team wants this application to do is listed below. Within that list are the exact routes needed, what components are needed in each view, and even some stretch goals. Your team’s job is to create tickets from this list of features and stick to the list. Though if you have any questions, I'm sure the product team is open to feedback, but they want this product to look as close to this example here: https://trinstasham.netlify.app/
+
 ## Setup Instructions
 1. Install Dependencies `npm i`
 1. Start App `npm start`
