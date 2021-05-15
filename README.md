@@ -69,6 +69,15 @@ A list of what the Product team wants this application to do is listed below. Wi
   - Allow user to update their bio
   - Allow user to logout
 
+- Navbar
+  - Here is how to iplment the Navbar
+  ```jsx
+  <AppNavbar userInfo={{/* Pass in User Object from user node */}} />
+  <div className='app-container'>
+    {/* The rest of the application should be loaded here */}
+  </div>
+  ```
+
 ## ERD
 
 <a href="https://dbdiagram.io/d/6099dd88b29a09603d1444c2">![ERD Preview](./documentation/ERD.png)</a>
