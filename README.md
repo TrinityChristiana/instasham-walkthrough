@@ -9,8 +9,6 @@ A list of what the Product team wants this application to do is listed below. Wi
 ## Setup Instructions
 1. Install Dependencies `npm i`
 1. Start App `npm start`
-1. This repo already has some componets for you to use to complete this project. When you first start this app, they are all loaded on the DOM for you to play around with and to see an example of it implmented. DO NOT update the components in the `instasham-design-system` directory. You must use them as is. You can update the scss for these componets though to better fit.
-1. These
 
 ## Feature List
 - General
