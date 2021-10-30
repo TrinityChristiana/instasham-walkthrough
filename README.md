@@ -68,7 +68,7 @@ A list of what the Product team wants this application to do is listed below. Wi
   - Allow user to update their bio
   - Allow user to logout
 - Navbar
-  - Here is how to iplment the Navbar
+  - Here is how to implement the Navbar
   ```jsx
   <AppNavbar userInfo={{/* Pass in User Object from user node */}} />
   <div className='app-container'>
