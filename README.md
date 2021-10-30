@@ -15,13 +15,13 @@ A list of what the Product team wants this application to do is listed below. Wi
 - General
   - Each user should have a user object in firebase.
   - When getting the current date use the `getCurrentDate` function in `/helpers/dateHelper.js`.
-  - Get username from characters before @ in user's email address. Ex: if email is "trinity@me.com", username would be "trinity".
+  - Get username from characters before @ in user's email address. Ex: if the email is "trinity@me.com", the username would be "trinity".
   - Don't use the Firebase key from the user node when referencing a user, always use the uid from the auth user.
-  - Do not update the components file. You may update the styles, but do not update the React code it's self.
+  - Do not update the components file. You may update the styles, but do not update the React code itself.
 - Login Page
   - At route path: `/login`
-  - Shows up if user's not logged in
-  - User can login to app using google auth
+  - Shows up if the user's not logged in
+  - User can log in to the app using Google auth
 - Feed Page
   - At route path: `/`
   - Components Used:
@@ -41,7 +41,7 @@ A list of what the Product team wants this application to do is listed below. Wi
 - Edit Post
   - At route path: `/edit/{{ postId }}`
   - Has a prepopulated form to update a post. (Look at ERD for data structure)
-  - Stretch: If postId in url is to a post that does not belong to the current user or does not exist, redirect them to the home page.
+  - Stretch: If `postId` in url is to a post that does not belong to the current user or does not exist, redirect them to the home page.
 - Heart Page `/hearts`
   - At route path: `/hearts`
   - Components Used:
@@ -50,15 +50,15 @@ A list of what the Product team wants this application to do is listed below. Wi
 - Profile View
   - At route path: `/sham/{{ username }}`
   - Components Used:
-    - Use `PostGrid` component to show preview of all the user's posts
-    - Use `ProfileInfo` component to show user information
-  - View how many posts user has
-  - View how many followers user has
-  - View how many people user follows
+    - Use the `PostGrid` component to show a preview of all the user's posts
+    - Use the `ProfileInfo` component to show user information
+  - View how many posts a user has
+  - View how many followers a user has
+  - View how many people a user follows
   - View user's image, bio, and full name
   - View preview of all post user has
-  - If not current user, allow user to follow or unfollow a user
-  - If current user have a button that allows them to go to a settings page.
+  - If not looking at the current user, allow the user to follow or unfollow a user
+  - If looking at the current user, have a button that allows them to go to a settings page.
 - Post Details Page
   - At route path: `/posts/{{ postId }}`
   - Components Used:
@@ -79,3 +79,6 @@ A list of what the Product team wants this application to do is listed below. Wi
 ## ERD
 
 <a href="https://dbdiagram.io/d/6099dd88b29a09603d1444c2">![ERD Preview](./documentation/ERD.png)</a>
+
+
+

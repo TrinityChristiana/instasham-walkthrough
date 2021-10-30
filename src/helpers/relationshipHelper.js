@@ -31,5 +31,5 @@ export {
   getFollowingByUid,
   getIsFollowing,
   unfollowUser,
-  followUser
+  followUser,
 };

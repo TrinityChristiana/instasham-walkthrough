@@ -10,5 +10,5 @@ const getUserByUid = (uid) => new Promise((resolve) => {
 
 export {
   getUserByUid,
-  getCurrentUsersUid
+  getCurrentUsersUid,
 };

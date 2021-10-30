@@ -4,14 +4,18 @@ import React, { useEffect, useState } from 'react';
 import { Heart, MoreHorizontal } from 'react-feather';
 import { useHistory, useLocation } from 'react-router-dom';
 import { ListGroup, ListGroupItem, UncontrolledPopover } from 'reactstrap';
-import { heartPost, unheartPost, userLikesPost } from '../../helpers/heartHelper';
+import {
+  heartPost,
+  unheartPost,
+  userLikesPost,
+} from '../../helpers/heartHelper';
 import { deletePost } from '../../helpers/postHelper';
 import { getCurrentUsersUid, getUserByUid } from '../../helpers/userHelper';
 
 const PostDetailCard = ({
   postInfo,
   withBorder = false,
-  onUpdate = () => ''
+  onUpdate = () => '',
 }) => {
   const location = useLocation();
   const history = useHistory();
@@ -54,12 +58,14 @@ const PostDetailCard = ({
 
   return (
     <>
-      <div id={postInfo.firebaseKey} className={`details-card ${withBorder ? 'details-card-withborder' : ''}`}>
-        <div className='details-card-user'>
-          <UserInfo
-            goToProfile={goToProfile}
-            postUserInfo={postUserInfo}
-          />
+      <div
+        id={postInfo.firebaseKey}
+        className={`details-card ${
+          withBorder ? 'details-card-withborder' : ''
+        }`}
+      >
+        <div className="details-card-user">
+          <UserInfo goToProfile={goToProfile} postUserInfo={postUserInfo} />
           <UserActions
             postInfo={postInfo}
             onUpdate={onUpdate}
@@ -67,9 +73,9 @@ const PostDetailCard = ({
           />
         </div>
         <div
-          className='details-card-post-photo'
+          className="details-card-post-photo"
           style={{ backgroundImage: `url(${postInfo.photoUrl})` }}
-        ></div>
+        />
         <PostDetails
           handleClick={goToProfile}
           username={postUserInfo.username}
@@ -90,15 +96,30 @@ PostDetailCard.propTypes = {
     datePublished: PropTypes.string.isRequired,
   }),
   withBorder: PropTypes.bool,
-  onUpdate: PropTypes.func
+  onUpdate: PropTypes.func,
+};
+
+PostDetailCard.defaultProps = {
+  postInfo: undefined,
+  withBorder: false,
+  onUpdate: () => '',
 };
 
 const UserInfo = ({ goToProfile, postUserInfo }) => (
-  <div onClick={ goToProfile } className='details-card-user-info'>
-    <div className='details-card-user-info-avatar-container'>
-      <div className='details-card-user-info-avatar' style={{ backgroundImage: `url(${postUserInfo.profileImage})` }}></div>
+  <div
+    onClick={goToProfile}
+    className="details-card-user-info"
+    aria-hidden="true"
+  >
+    <div className="details-card-user-info-avatar-container">
+      <div
+        className="details-card-user-info-avatar"
+        style={{ backgroundImage: `url(${postUserInfo.profileImage})` }}
+      />
     </div>
-    <div className='details-card-user-info-username'>{ postUserInfo.username }</div>
+    <div className="details-card-user-info-username">
+      {postUserInfo.username}
+    </div>
   </div>
 );
 
@@ -106,15 +127,15 @@ UserInfo.propTypes = {
   goToProfile: PropTypes.func.isRequired,
   postUserInfo: PropTypes.shape({
     profileImage: PropTypes.string,
-    username: PropTypes.string
-  })
+    username: PropTypes.string,
+  }),
 };
 
-const UserActions = ({
-  postInfo,
-  history,
-  onUpdate
-}) => {
+UserInfo.defaultProps = {
+  postUserInfo: undefined,
+};
+
+const UserActions = ({ postInfo, history, onUpdate }) => {
   const handleDelete = () => {
     deletePost(postInfo.firebaseKey).then(() => onUpdate(postInfo.userId));
   };
@@ -124,16 +145,26 @@ const UserActions = ({
   };
 
   return (
-    <div className='details-card-user-actions'>
+    <div className="details-card-user-actions">
       {postInfo.userId === getCurrentUsersUid() && (
         <>
-          <MoreHorizontal id={`More--${postInfo.firebaseKey}`} className='as-link details-card-user-actions-icon' />{' '}
-          <UncontrolledPopover trigger='focus' placement='bottom' target={`More--${postInfo.firebaseKey}`}>
+          <MoreHorizontal
+            id={`More--${postInfo.firebaseKey}`}
+            className="as-link details-card-user-actions-icon"
+          />{' '}
+          <UncontrolledPopover
+            trigger="focus"
+            placement="bottom"
+            target={`More--${postInfo.firebaseKey}`}
+          >
             <ListGroup>
-              <ListGroupItem onClick={handleEdit} className='as-link'>
+              <ListGroupItem onClick={handleEdit} className="as-link">
                 Edit
               </ListGroupItem>
-              <ListGroupItem onClick={handleDelete} className='as-link text-danger'>
+              <ListGroupItem
+                onClick={handleDelete}
+                className="as-link text-danger"
+              >
                 Delete
               </ListGroupItem>
             </ListGroup>
@@ -147,10 +178,17 @@ const UserActions = ({
 UserActions.propTypes = {
   postInfo: PropTypes.shape({
     firebaseKey: PropTypes.string.isRequired,
-    userId: PropTypes.string.isRequired
+    userId: PropTypes.string.isRequired,
   }),
-  history: PropTypes.object.isRequired,
-  onUpdate: PropTypes.func
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
+  onUpdate: PropTypes.func,
+};
+
+UserActions.defaultProps = {
+  onUpdate: undefined,
+  postInfo: undefined,
 };
 
 const PostDetails = ({
@@ -158,20 +196,32 @@ const PostDetails = ({
   username,
   postInfo,
   handleHeart,
-  heartInfo
+  heartInfo,
 }) => (
   <>
-    <div className='details-card-post-info'>
-      <div className='details-card-post-info-heart'>
-        <Heart onClick={handleHeart} className={`details-card-post-info-heart-icon ${heartInfo.hearted ? 'hearted' : ''}`} /> {`${heartInfo.total ?? '?'} like${heartInfo.total !== 1 ? 's' : ''}`}
+    <div className="details-card-post-info">
+      <div className="details-card-post-info-heart">
+        <Heart
+          onClick={handleHeart}
+          className={`details-card-post-info-heart-icon ${
+            heartInfo.hearted ? 'hearted' : ''
+          }`}
+        />{' '}
+        {`${heartInfo.total ?? '?'} like${heartInfo.total !== 1 ? 's' : ''}`}
       </div>
-      <div className='details-card-post-info-time'>{moment(postInfo.datePublished).local().fromNow()}</div>
+      <div className="details-card-post-info-time">
+        {moment(postInfo.datePublished).local().fromNow()}
+      </div>
     </div>
-    <div className='details-card-post-text'>
-      <span onClick={ handleClick } className='details-card-post-text-username'>
-        { username }
+    <div className="details-card-post-text">
+      <span
+        onClick={handleClick}
+        className="details-card-post-text-username"
+        aria-hidden="true"
+      >
+        {username}
       </span>
-      <span className='details-card-post-text-caption'>{ postInfo.caption }</span>
+      <span className="details-card-post-text-caption">{postInfo.caption}</span>
     </div>
   </>
 );
@@ -180,17 +230,24 @@ PostDetails.propTypes = {
   heartInfo: PropTypes.oneOfType([
     PropTypes.shape({
       total: PropTypes.number.isRequired,
-      hearted: PropTypes.bool.isRequired
+      hearted: PropTypes.bool.isRequired,
     }),
-    PropTypes.bool
+    PropTypes.bool,
   ]),
   postInfo: PropTypes.shape({
     datePublished: PropTypes.string.isRequired,
-    caption: PropTypes.string.isRequired
+    caption: PropTypes.string.isRequired,
   }),
   username: PropTypes.string,
   handleClick: PropTypes.func,
   handleHeart: PropTypes.func.isRequired,
+};
+
+PostDetails.defaultProps = {
+  handleClick: undefined,
+  username: undefined,
+  postInfo: undefined,
+  heartInfo: undefined,
 };
 
 export default PostDetailCard;

@@ -8,7 +8,7 @@ import {
   getFollowersByUid,
   getFollowingByUid,
   getIsFollowing,
-  unfollowUser
+  unfollowUser,
 } from '../../helpers/relationshipHelper';
 import { getCurrentUsersUid } from '../../helpers/userHelper';
 import UserList from './UsersList';
@@ -96,7 +96,7 @@ const ProfileInfo = ({
     return (
       <Button
         onClick={onClick}
-        className='profile-info-button'
+        className="profile-info-button"
         disabled={text === LOADING_TEXT}
       >
         {text}
@@ -105,45 +105,53 @@ const ProfileInfo = ({
   };
 
   return (
-    <div className='profile-info'>
+    <div className="profile-info">
       <UserListModal
-        headingText={`People ${isLoggedInUser ? 'You' : fullName} Follow${isLoggedInUser ? '' : 's'}`}
+        headingText={`People ${isLoggedInUser ? 'You' : fullName} Follow${
+          isLoggedInUser ? '' : 's'
+        }`}
         closeUserListModal={closeUserListModal}
-        emptyMessage='No Users fit this criteria'
+        emptyMessage="No Users fit this criteria"
         userList={userList}
         showModal={showModal}
       />
-      <div className='profile-info-visuals'>
-        <div className='profile-info-visuals-photo-container'>
+      <div className="profile-info-visuals">
+        <div className="profile-info-visuals-photo-container">
           <div
             style={{
-              backgroundImage: `url(${profileImage || 'https://redzonekickboxing.com/wp-content/uploads/2017/04/default-image.jpg'})`
+              backgroundImage: `url(${
+                profileImage
+                || 'https://redzonekickboxing.com/wp-content/uploads/2017/04/default-image.jpg'
+              })`,
             }}
-            className='profile-info-visuals-photo'
-          ></div>
+            className="profile-info-visuals-photo"
+          />
         </div>
-        <div className='profile-info-visuals-counts'>
-          <div className='profile-info-visuals-counts-posts'>
-            <div>{postsCount}</div> <div className='profile-info-visuals-counts-text'>Posts</div>
+        <div className="profile-info-visuals-counts">
+          <div className="profile-info-visuals-counts-posts">
+            <div>{postsCount}</div>{' '}
+            <div className="profile-info-visuals-counts-text">Posts</div>
           </div>
-          <div className='profile-info-visuals-counts-followers '>
+          <div className="profile-info-visuals-counts-followers ">
             <div>{followerCount}</div>{' '}
-            <div className='profile-info-visuals-counts-text'>
+            <div className="profile-info-visuals-counts-text">
               {' '}
               <span
-                className='as-link'
+                className="as-link"
                 onClick={openFollowersModal}
+                aria-hidden="true"
               >
                 Followers
               </span>
             </div>
           </div>
-          <div className='profile-info-visuals-counts-following'>
+          <div className="profile-info-visuals-counts-following">
             <div>{followingCount}</div>{' '}
-            <div className='profile-info-visuals-counts-text'>
+            <div className="profile-info-visuals-counts-text">
               <span
-                className='as-link'
+                className="as-link"
                 onClick={openFollowingModal}
+                aria-hidden="true"
               >
                 Following
               </span>
@@ -151,11 +159,11 @@ const ProfileInfo = ({
           </div>
         </div>
       </div>
-      <div className='profile-info-description'>
-        <div className='profile-info-description-name'>{fullName}</div>
-        <div className='profile-info-description-bio'>{bio}</div>
+      <div className="profile-info-description">
+        <div className="profile-info-description-name">{fullName}</div>
+        <div className="profile-info-description-bio">{bio}</div>
       </div>
-      <div className='profile-info-button-container'>
+      <div className="profile-info-button-container">
         <InfoButton />
       </div>
     </div>
@@ -174,26 +182,32 @@ ProfileInfo.propTypes = {
   uid: PropTypes.number,
 };
 
+ProfileInfo.defaultProps = {
+  onUpdate: undefined,
+  postsCount: undefined,
+  followerCount: undefined,
+  followingCount: undefined,
+  profileImage: undefined,
+  fullName: undefined,
+  bio: undefined,
+  isUser: undefined,
+  uid: undefined,
+};
+
 const UserListModal = ({
   headingText,
   userList,
   showModal,
   closeUserListModal,
-  emptyMessage
+  emptyMessage,
 }) => (
   <div>
-    <Modal
-      isOpen={showModal}
-      toggle={closeUserListModal}
-    >
-      <div className='d-flex justify-content-end p-2'>
-        <X
-          onClick={closeUserListModal}
-          style={{ cursor: 'pointer' }}
-        />
+    <Modal isOpen={showModal} toggle={closeUserListModal}>
+      <div className="d-flex justify-content-end p-2">
+        <X onClick={closeUserListModal} style={{ cursor: 'pointer' }} />
       </div>
       <div>
-        <h2 className='d-flex justify-content-center '>{headingText}</h2>
+        <h2 className="d-flex justify-content-center ">{headingText}</h2>
         <UserList
           emptyMessage={emptyMessage}
           onUserClick={closeUserListModal}
@@ -207,9 +221,15 @@ const UserListModal = ({
 UserListModal.propTypes = {
   headingText: PropTypes.string,
   emptyMessage: PropTypes.string,
-  userList: PropTypes.array.isRequired,
+  userList: PropTypes.arrayOf(PropTypes.object).isRequired,
   showModal: PropTypes.bool.isRequired,
-  closeUserListModal: PropTypes.func
+  closeUserListModal: PropTypes.func,
+};
+
+UserListModal.defaultProps = {
+  headingText: undefined,
+  emptyMessage: undefined,
+  closeUserListModal: undefined,
 };
 
 export default ProfileInfo;
