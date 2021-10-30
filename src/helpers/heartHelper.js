@@ -4,7 +4,7 @@ const userLikesPost = (postId) => new Promise((resolve) => {
   resolve({
     heartId: `${postId}randomtest`, // Firebase key of relationship if hearted
     total: likes, // How many hearts post has total
-    hearted: !!(likes % 2) // boolean on if current user likes post
+    hearted: !!(likes % 2), // boolean on if current user likes post
   });
 });
 
