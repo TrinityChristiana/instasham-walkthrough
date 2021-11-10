@@ -175,11 +175,11 @@ ProfileInfo.propTypes = {
   postsCount: PropTypes.number,
   followerCount: PropTypes.number,
   followingCount: PropTypes.number,
-  profileImage: PropTypes.number,
+  profileImage: PropTypes.string,
   fullName: PropTypes.string,
   bio: PropTypes.string,
   isUser: PropTypes.bool,
-  uid: PropTypes.number,
+  uid: PropTypes.string,
 };
 
 ProfileInfo.defaultProps = {
