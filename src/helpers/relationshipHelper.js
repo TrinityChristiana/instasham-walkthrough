@@ -11,7 +11,7 @@ const getFollowingByUid = (uid) => new Promise((resolve) => {
 });
 
 const getIsFollowing = (userId) => new Promise((resolve) => {
-  // TODO: Get boolean of whether or not current user follows userId
+  // TODO: Should return firebaseKey of relationship if current user follows userId and false if not
   console.warn(userId);
   resolve(!!(Math.floor(Math.random() * 2) % 2));
 });
